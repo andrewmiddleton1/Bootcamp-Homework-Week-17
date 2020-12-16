@@ -8,6 +8,8 @@ const express = require("express");
 
 const router = express.Router();
 
+const path = require("path");
+
 
 // Routes
 // =============================================================
@@ -17,19 +19,19 @@ const router = express.Router();
 // index route loads view.html
 router.get("/", function (req, res) {
   console.log("homepage requested: " + req);
-  res.render("index", {});
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 // exercise page
 router.get("/exercise", function (req, res) {
   console.log("exercise requested: " + req);
-  res.render("exercise", {});
+  res.sendFile(path.join(__dirname, "../public/exercise.html"));
 });
 
 // stats page
 router.get("/stats", function (req, res) {
   console.log("stats requested: " + req);
-  res.render("stats", {});
+  res.sendFile(path.join(__dirname, "../public/stats.html"));
 });
 
 
