@@ -10,10 +10,15 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://andrewmiddleton1:Gundaroo484@cluster0.ree7w.mongodb.net/exercise", {
-    useNewUrlParser: true,
-    useFindAndModify: false
-});
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/deep-thoughts',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useCreateIndex: true,
+        useFindAndModify: false
+    }
+);
 
 
 // // routes
